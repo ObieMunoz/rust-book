@@ -1,3 +1,5 @@
 # Rust Tutorial
 
 I'm just following the rust book, the [brown.edu edition](https://rust-book.cs.brown.edu/experiment-intro.html).
+
+The "extras" folder contains misc. code written in Rust that I completed while I was also doing the book.
