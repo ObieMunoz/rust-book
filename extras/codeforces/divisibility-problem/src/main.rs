@@ -1,6 +1,7 @@
-use std::io;
+use std::io::{self, BufRead};
 
 fn main() {
+    /*
     let mut num_test_cases = String::new();
 
     io::stdin()
@@ -30,6 +31,28 @@ fn main() {
             }
         }
         Err(_) => {}
+    }
+    */
+
+    let stdin = io::stdin();
+    let mut lines = stdin.lock().lines();
+
+    let num_test_cases: usize = lines
+        .next()
+        .unwrap()
+        .unwrap()
+        .trim()
+        .parse()
+        .expect("Failed to parse number of test cases");
+
+    for _ in 0..num_test_cases {
+        let line = lines.next().unwrap().unwrap();
+        let mut numbers = line.split_whitespace();
+
+        let a: i32 = numbers.next().unwrap().parse().unwrap();
+        let b: i32 = numbers.next().unwrap().parse().unwrap();
+
+        find_next_divisible_number(a, b);
     }
 }
 
